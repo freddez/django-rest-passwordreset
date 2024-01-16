@@ -11,7 +11,10 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='django-rest-passwordreset',
     version=os.getenv('PACKAGE_VERSION', '0.0.0').replace('refs/tags/', ''),
+    packages_dir={"django_rest_passwordreset":"django_rest_passwordreset"},
     packages=find_packages(),
+    use_scm_version=True,
+    setup_requires=["setuptools_scm"],
     include_package_data=True,
     license='BSD License',
     description='An extension of django rest framework, providing a configurable password reset strategy',
@@ -36,6 +39,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
